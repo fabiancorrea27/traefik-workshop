@@ -44,4 +44,4 @@ Traefik hace uso del socker de Docker para detectar cualquier evento que se gene
 
 ### Paso 6. Revisar routers en el dashboard
 
-![whoami traefik](/home/fabiancho/Documentos/taller-traefik/images/whoami-traefik.png)
+![whoami traefik](./images/whoami-traefik.png)
