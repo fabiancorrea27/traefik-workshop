@@ -14,11 +14,11 @@ Enrutar por host, permite alojar varios servicios bajo un mismo puerto, diferenc
 
 ### ¿Qué diferencia hay entre labels en los servicios y usar archivos de configuración?
 
-Los labels se escriben directamente en el docker-compose, permitiendo una configuración rápida de los servicios, en cambio haciendo uso de archivos de configuración se necesita mantener reglas muy detalladas.
+Los labels se escriben directamente en el ```docker-compose.yml```, actúan como metadatos que permiten una configuración de rápida y dinamica por servicio, en cambio haciendo uso de archivos de configuración se usan para mantener reglas detalladas y globales como la configuración general del sistema por ejemplo: puertos de escucha, logs entre otros.
 
 ### ¿Cómo se entera Traefik de que había servicios nuevos?
 
-Traefik hace uso del socker de Docker para detectar cualquier evento que se genere cuando se hace un `docker run` o `docker-compose up`. Igualmente, sucede en el caso que se detengan los servicios.
+Traefik se conecta al Docker socket y escucha en tiempo real los eventos del motor de Docker. Cada vez que un contenedor se levanta (docker run o docker-compose up) o se detiene, Traefik recibe la notificación y actualiza automáticamente su configuración.
 
 ## Actividad
 
@@ -45,3 +45,14 @@ Traefik hace uso del socker de Docker para detectar cualquier evento que se gene
 ### Paso 6. Revisar routers en el dashboard
 
 ![whoami traefik](./images/whoami-traefik.png)
+
+
+## Referencias  
+
+1. Docker Documentation —  
+   https://docs.docker.com/engine/manage-resources/labels/  
+
+2. Docker Documentation —   
+   https://docs.docker.com/guides/traefik/  
+
+
